@@ -3,8 +3,6 @@ const flat = require('flat');
 const toArray = require('object-values-to-array');
 const fs = require('fs');
 
-const nextLine = (data, n) => (data[n] === '' ? nextLine(n + 1) : data[n]);
-
 fetch('http://poetrydb.org/author/dickinson/lines')
   .then(response => response.json())
   .then((json) => {
